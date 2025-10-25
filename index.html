@@ -3,39 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Două imagini</title>
+  <title>Imagine full page</title>
   <style>
-    body {
-      background-color: #0f1724;
-      color: white;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column; /* imaginile una sub alta */
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    html, body {
       margin: 0;
-      gap: 20px; /* spațiu între imagini */
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
     }
 
     img {
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      max-width: 80%;
-      height: auto;
-      transition: transform 0.3s ease;
-    }
-
-    img:hover {
-      transform: scale(1.03);
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* imaginea acoperă tot ecranul */
     }
   </style>
 </head>
 <body>
-  <!-- Prima imagine -->
-  <img src="imagine-site.jpg" alt="Prima imagine" />
-  
-  <!-- A doua imagine -->
-  <img src="imagine-site2.jpg" alt="A doua imagine" />
+  <img src="imagine-site.jpg" alt="Imagine full page" />
 </body>
 </html>
