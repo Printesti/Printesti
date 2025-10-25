@@ -3,30 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Imagine full page</title>
+  <title>Printesti</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-    }
-
     body {
+      background-color: #0f1724;
+      color: white;
+      font-family: sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column; /* imaginile una sub alta */
       align-items: center;
-      background-color: black;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      gap: 20px; /* spațiu între imagini */
     }
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* imaginea acoperă tot ecranul */
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      max-width: 80%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.03);
     }
   </style>
 </head>
 <body>
-  <img src="imagine-site.jpg" alt="Imagine full page" />
+  <!-- Prima imagine -->
+  <img src="imagine-site.jpg" alt="Prima imagine" />
+  
 </body>
 </html>
