@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Printesti - Servicii de Print Profesionale</title>
+  <meta name="description" content="Printesti - Servicii profesionale de print: pliante, bannere, cărți de vizită, stickere, tricouri și postere personalizate în Ploiești.">
+  <meta name="keywords" content="print, pliante, bannere, cărți de vizită, stickere, tricouri personalizate, postere, Ploiești">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -13,20 +16,20 @@
     }
 
     body {
-      background: #f7f7f7;
+      background: #f4f4f4;
       color: #333;
+      scroll-behavior: smooth;
     }
 
     header {
       position: relative;
       text-align: center;
-      background: linear-gradient(180deg, #000, #111, #000);
-      padding: 80px 20px;
+      background: linear-gradient(135deg, #00b4d8, #ff0099);
+      padding: 100px 20px;
       color: white;
       overflow: hidden;
     }
 
-    /* Efect subtil de lumină în centrul headerului */
     header::before {
       content: "";
       position: absolute;
@@ -36,8 +39,8 @@
     }
 
     header img {
-      max-width: 280px;
-      margin-bottom: 10px;
+      max-width: 300px;
+      margin-bottom: 20px;
       position: relative;
       z-index: 1;
     }
@@ -45,65 +48,76 @@
     header p {
       position: relative;
       z-index: 1;
-      font-size: 1.1em;
-      font-weight: 400;
-      color: #ddd;
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px 20px;
+      gap: 25px;
+      padding: 50px 20px;
       max-width: 1200px;
       margin: auto;
     }
 
     .gallery-item {
       background: white;
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
     }
 
     .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
     }
 
     .gallery-item img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
 
     .gallery-item p {
       padding: 15px;
       text-align: center;
       background: #fafafa;
-      font-weight: 500;
+      font-weight: 600;
+      color: #333;
     }
 
     .contact {
       background: white;
       padding: 60px 20px;
       max-width: 800px;
-      margin: 40px auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 50px auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     .contact h2 {
       text-align: center;
-      margin-bottom: 20px;
-      color: #00b4d8;
+      margin-bottom: 15px;
+      color: #ff0099;
+      font-size: 2em;
     }
 
     .contact p {
       text-align: center;
       margin-bottom: 30px;
       color: #555;
+      font-size: 1.1em;
     }
 
     form {
@@ -114,20 +128,21 @@
     }
 
     input, textarea {
-      padding: 12px 15px;
-      border-radius: 8px;
+      padding: 15px 20px;
+      border-radius: 10px;
       border: 1px solid #ccc;
       font-size: 1em;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     input:focus, textarea:focus {
-      border-color: #00b4d8;
+      border-color: #ff0099;
+      box-shadow: 0 0 8px rgba(255,0,153,0.3);
       outline: none;
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 140px;
       resize: vertical;
     }
 
@@ -135,15 +150,17 @@
       background: linear-gradient(90deg, #00b4d8, #ff0099);
       color: white;
       border: none;
-      padding: 14px;
-      border-radius: 8px;
+      padding: 16px;
+      border-radius: 10px;
       font-size: 1.1em;
+      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.4s ease, transform 0.3s ease;
     }
 
     button:hover {
       background: linear-gradient(90deg, #0090b5, #e60084);
+      transform: scale(1.03);
     }
 
     .success-message {
@@ -152,34 +169,44 @@
       color: #28a745;
       font-weight: 500;
       margin-top: 15px;
+      font-size: 1.1em;
     }
 
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     footer h3 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+      color: #00b4d8;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       margin-top: 15px;
+      font-size: 1.6em;
     }
 
     .social-links a {
       color: white;
-      font-size: 1.5em;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .social-links a:hover {
-      color: #00b4d8;
+      color: #ff0099;
+      transform: scale(1.2);
+    }
+
+    .location {
+      margin-top: 15px;
+      font-size: 0.95em;
+      color: #ccc;
     }
 
     @media (max-width: 600px) {
@@ -194,85 +221,24 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
     <img src="logoprintesti.png" alt="Printesti - Ideile prind culoare">
-    <p>Printăm tot ce îți imaginezi – pliante, bannere, cărți de vizită și multe altele!</p>
+    <p>Printăm tot ce îți imaginezi – pliante, bannere, cărți de vizită, stickere, tricouri și postere!</p>
   </header>
 
   <main>
     <!-- Galerie Produse -->
     <section class="gallery">
       <div class="gallery-item">
-        <img src="pliante.jpg" alt="Pliante">
+        <img src="pliante.jpg" alt="Pliante personalizate" loading="lazy">
         <p>Pliante personalizate</p>
       </div>
       <div class="gallery-item">
-        <img src="bannere.jpg" alt="Bannere">
+        <img src="bannere.jpg" alt="Bannere outdoor & indoor" loading="lazy">
         <p>Bannere outdoor & indoor</p>
       </div>
       <div class="gallery-item">
-        <img src="carti-vizita.jpg" alt="Cărți de vizită">
-        <p>Cărți de vizită profesionale</p>
-      </div>
-      <div class="gallery-item">
-        <img src="stickere.jpg" alt="Stickere">
-        <p>Stickere și autocolante</p>
-      </div>
-      <div class="gallery-item">
-        <img src="tricouri.jpg" alt="Tricouri personalizate">
-        <p>Tricouri personalizate</p>
-      </div>
-      <div class="gallery-item">
-        <img src="postere.jpg" alt="Postere">
-        <p>Postere & afișe</p>
-      </div>
-    </section>
-
-    <!-- Secțiunea Contact -->
-    <section class="contact" id="contact">
-      <h2>Contactează-ne</h2>
-      <p>Ai o comandă sau o întrebare? Scrie-ne și îți răspundem rapid!</p>
-
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Nume complet" required>
-        <input type="email" name="email" placeholder="Adresa de email" value="office@printesti.ro" required>
-        <textarea name="message" placeholder="Mesajul tău" required></textarea>
-        <button type="submit">Trimite mesajul</button>
-      </form>
-
-      <div class="success-message" id="successMessage">
-        ✅ Mulțumim! Mesajul tău a fost trimis cu succes.
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <h3>Urmărește-ne</h3>
-    <div class="social-links">
-      <a href="https://www.facebook.com/share/1M7GsoR9oY/" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/printesti.ro?igsh=eGVmZnhxOGcycTBp" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@printesti?_t=ZN-90xAm4IhN1q&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="mailto:office@printesti.ro"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/40700000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <p style="margin-top: 15px; font-size: 0.9em;">&copy; 2025 Printesti. Toate drepturile rezervate.</p>
-  </footer>
-
-  <script>
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      successMessage.style.display = 'block';
-      form.reset();
-      window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
-    });
-  </script>
-
-</body>
-</html>
+        <img src="carti-vizita.jpg" alt="Cărți de vizită prof
