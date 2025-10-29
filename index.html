@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Printesti - Servicii de Print Profesionale</title>
-  <meta name="description" content="Printesti - Servicii profesionale de print: pliante, bannere, cărți de vizită, stickere, tricouri și postere personalizate în Ploiești.">
-  <meta name="keywords" content="print, pliante, bannere, cărți de vizită, stickere, tricouri personalizate, postere, Ploiești">
+  <title>Printesti - Servicii Profesionale de Print</title>
+  <meta name="description" content="Printesti - Servicii de print moderne: invitații, cărți de vizită, stickere, tricouri personalizate și multe altele.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -16,160 +15,87 @@
     }
 
     body {
-      background: #f4f4f4;
+      background: #f8f9fa;
       color: #333;
-      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     header {
-      position: relative;
+      background: linear-gradient(135deg, #000000, #333333);
       text-align: center;
-      background: linear-gradient(135deg, #00b4d8, #ff0099);
-      padding: 100px 20px;
+      padding: 100px 20px 80px;
       color: white;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 80%);
-      z-index: 0;
+      position: relative;
     }
 
     header img {
-      max-width: 300px;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
+      max-width: 260px;
+      margin-bottom: 15px;
+      animation: fadeInDown 1s ease-out;
     }
 
     header p {
-      position: relative;
-      z-index: 1;
       font-size: 1.2em;
+      color: #f0f0f0;
       font-weight: 500;
-      color: #fff;
-      max-width: 700px;
-      margin: 0 auto;
+      margin-top: 10px;
+      animation: fadeInUp 1.5s ease;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 50px 20px;
-      max-width: 1200px;
-      margin: auto;
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    .gallery-item {
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .categories {
+      max-width: 600px;
+      margin: 60px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .category {
       background: white;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-30px);
     }
 
-    .gallery-item:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-    }
-
-    .gallery-item img {
+    .category img {
       width: 100%;
       height: 220px;
       object-fit: cover;
       transition: transform 0.4s ease;
     }
 
-    .gallery-item:hover img {
+    .category:hover img {
       transform: scale(1.05);
     }
 
-    .gallery-item p {
+    .category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .category p {
+      text-align: center;
       padding: 15px;
-      text-align: center;
-      background: #fafafa;
+      font-size: 1.1em;
       font-weight: 600;
+      background: #fff;
       color: #333;
-    }
-
-    .contact {
-      background: white;
-      padding: 60px 20px;
-      max-width: 800px;
-      margin: 50px auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    .contact h2 {
-      text-align: center;
-      margin-bottom: 15px;
-      color: #ff0099;
-      font-size: 2em;
-    }
-
-    .contact p {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #555;
-      font-size: 1.1em;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-    }
-
-    input, textarea {
-      padding: 15px 20px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #ff0099;
-      box-shadow: 0 0 8px rgba(255,0,153,0.3);
-      outline: none;
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    button {
-      background: linear-gradient(90deg, #00b4d8, #ff0099);
-      color: white;
-      border: none;
-      padding: 16px;
-      border-radius: 10px;
-      font-size: 1.1em;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.4s ease, transform 0.3s ease;
-    }
-
-    button:hover {
-      background: linear-gradient(90deg, #0090b5, #e60084);
-      transform: scale(1.03);
-    }
-
-    .success-message {
-      display: none;
-      text-align: center;
-      color: #28a745;
-      font-weight: 500;
-      margin-top: 15px;
-      font-size: 1.1em;
     }
 
     footer {
@@ -177,20 +103,15 @@
       color: white;
       text-align: center;
       padding: 40px 20px;
-    }
-
-    footer h3 {
-      margin-bottom: 15px;
-      font-size: 1.3em;
-      color: #00b4d8;
+      margin-top: 60px;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
       gap: 25px;
-      margin-top: 15px;
-      font-size: 1.6em;
+      font-size: 1.8em;
+      margin-bottom: 15px;
     }
 
     .social-links a {
@@ -203,42 +124,74 @@
       transform: scale(1.2);
     }
 
-    .location {
-      margin-top: 15px;
-      font-size: 0.95em;
+    footer p {
+      font-size: 0.9em;
       color: #ccc;
     }
 
     @media (max-width: 600px) {
-      header img {
-        max-width: 220px;
-      }
-      header p {
-        font-size: 1em;
-      }
-      .contact {
-        padding: 40px 15px;
-      }
+      header img { max-width: 200px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logoprintesti.png" alt="Printesti - Ideile prind culoare">
-    <p>Printăm tot ce îți imaginezi – pliante, bannere, cărți de vizită, stickere, tricouri și postere!</p>
+    <img src="printestifinal.png" alt="Printesti Logo">
+    <p></p>
   </header>
 
-  <main>
-    <!-- Galerie Produse -->
-    <section class="gallery">
-      <div class="gallery-item">
-        <img src="pliante.jpg" alt="Pliante personalizate" loading="lazy">
-        <p>Pliante personalizate</p>
-      </div>
-      <div class="gallery-item">
-        <img src="bannere.jpg" alt="Bannere outdoor & indoor" loading="lazy">
-        <p>Bannere outdoor & indoor</p>
-      </div>
-      <div class="gallery-item">
-        <img src="carti-vizita.jpg" alt="Cărți de vizită prof
+  <section class="categories">
+    <div class="category">
+      <img src="invitatii-nunta.jpg" alt="Invitații de nuntă" loading="lazy">
+      <p>Invitații de nuntă</p>
+    </div>
+    <div class="category">
+      <img src="carti-vizita.jpg" alt="Cărți de vizită" loading="lazy">
+      <p>Cărți de vizită</p>
+    </div>
+    <div class="category">
+      <img src="stickere.jpg" alt="Stickere personalizate" loading="lazy">
+      <p>Stickere personalizate</p>
+    </div>
+    <div class="category">
+      <img src="tricouri.jpg" alt="Tricouri personalizate" loading="lazy">
+      <p>Tricouri personalizate</p>
+    </div>
+    <div class="category">
+      <img src="postere.jpg" alt="Postere și afișe" loading="lazy">
+      <p>Postere & Afișe</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://wa.me/40728423466" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/printesti.ro?igsh=eHd4Nm5lNzRiOXpl" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@printesti?_t=ZN-90xfTbgPSuU&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/share/1SvtnkSMT3/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="mailto:office@printesti.ro"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    const categories = document.querySelectorAll('.category');
+
+    function animateOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      categories.forEach(category => {
+        const categoryTop = category.getBoundingClientRect().top;
+        if(categoryTop < triggerBottom){
+          category.style.opacity = '1';
+          category.style.transform = 'translateX(0)';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+
+</body>
+</html>
