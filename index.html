@@ -21,11 +21,13 @@
     }
 
     header {
-      background: linear-gradient(135deg, #000000, #333333);
+      background: linear-gradient(135deg, #000000, #222222);
       text-align: center;
-      padding: 100px 20px 80px;
+      padding: 80px 20px 40px;
       color: white;
       position: relative;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
 
     header img {
@@ -96,6 +98,11 @@
       font-weight: 600;
       background: #fff;
       color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .category:hover p {
+      color: #ff0099;
     }
 
     footer {
@@ -137,8 +144,8 @@
 <body>
 
   <header>
-    <img src="printestifinal.png" alt="Printesti Logo">
-    <p></p>
+    <img src="printesti.png" alt="Printesti Logo">
+    <p>Tu alegi, noi printăm!</p>
   </header>
 
   <section class="categories">
