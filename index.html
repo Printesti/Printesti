@@ -82,3 +82,208 @@
 
     .gallery-item img {
       width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .gallery-item p {
+      padding: 15px;
+      text-align: center;
+      background: #fafafa;
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00b4d8;
+    }
+
+    .contact p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+
+    input, textarea {
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #00b4d8;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00b4d8, #ff0099);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #0090b5, #e60084);
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      color: #28a745;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #00b4d8;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .contact {
+        padding: 40px 15px;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <img src="logo-printesti.png" alt="Printesti - Ideile prind culoare">
+    <h1>Printesti</h1>
+    <p>Printăm tot ce îți imaginezi – pliante, bannere, cărți de vizită și multe altele!</p>
+  </header>
+
+  <main>
+    <!-- Galerie Produse -->
+    <section class="gallery">
+      <div class="gallery-item">
+        <img src="pliante.jpg" alt="Pliante">
+        <p>Pliante personalizate</p>
+      </div>
+      <div class="gallery-item">
+        <img src="bannere.jpg" alt="Bannere">
+        <p>Bannere outdoor & indoor</p>
+      </div>
+      <div class="gallery-item">
+        <img src="carti-vizita.jpg" alt="Cărți de vizită">
+        <p>Cărți de vizită profesionale</p>
+      </div>
+      <div class="gallery-item">
+        <img src="stickere.jpg" alt="Stickere">
+        <p>Stickere și autocolante</p>
+      </div>
+      <div class="gallery-item">
+        <img src="tricouri.jpg" alt="Tricouri personalizate">
+        <p>Tricouri personalizate</p>
+      </div>
+      <div class="gallery-item">
+        <img src="postere.jpg" alt="Postere">
+        <p>Postere & afișe</p>
+      </div>
+    </section>
+
+    <!-- Secțiunea Contact -->
+    <section class="contact" id="contact">
+      <h2>Contactează-ne</h2>
+      <p>Ai o comandă sau o întrebare? Scrie-ne și îți răspundem rapid!</p>
+
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Nume complet" required>
+        <input type="email" name="email" placeholder="Adresa de email" value="office@printesti.ro" required>
+        <textarea name="message" placeholder="Mesajul tău" required></textarea>
+        <button type="submit">Trimite mesajul</button>
+      </form>
+
+      <div class="success-message" id="successMessage">
+        ✅ Mulțumim! Mesajul tău a fost trimis cu succes.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h3>Urmărește-ne</h3>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/1M7GsoR9oY/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/printesti.ro?igsh=eGVmZnhxOGcycTBp" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@printesti?_t=ZN-90xAm4IhN1q&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="mailto:office@printesti.ro"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/40700000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p style="margin-top: 15px; font-size: 0.9em;">&copy; 2025 Printesti. Toate drepturile rezervate.</p>
+  </footer>
+
+  <script>
+    // Simulare trimitere formular
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      successMessage.style.display = 'block';
+      form.reset();
+      window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
