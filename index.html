@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Printesti - Servicii de Print Profesionale</title>
   <style>
-    /* Reset & Fonts */
     * {
       margin: 0;
       padding: 0;
@@ -21,41 +20,34 @@
     header {
       position: relative;
       text-align: center;
-      background: linear-gradient(90deg, #002b36, #073642, #004d7a, #7b4397, #dc2430);
-      padding: 60px 20px;
+      background: linear-gradient(180deg, #000, #111, #000);
+      padding: 80px 20px;
       color: white;
       overflow: hidden;
     }
 
-    /* Luminozitate subtilă în jurul logo-ului */
+    /* Efect subtil de lumină în centrul headerului */
     header::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 80%);
       z-index: 0;
     }
 
     header img {
-      max-width: 200px;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1, header p {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      font-size: 2.2em;
+      max-width: 280px;
       margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     header p {
+      position: relative;
+      z-index: 1;
       font-size: 1.1em;
       font-weight: 400;
+      color: #ddd;
     }
 
     .gallery {
@@ -93,7 +85,6 @@
       font-weight: 500;
     }
 
-    /* Contact Section */
     .contact {
       background: white;
       padding: 60px 20px;
@@ -192,8 +183,8 @@
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
+      header img {
+        max-width: 220px;
       }
       header p {
         font-size: 1em;
@@ -209,7 +200,6 @@
 
   <header>
     <img src="logoprintesti.png" alt="Printesti - Ideile prind culoare">
-    <h1>Printesti</h1>
     <p>Printăm tot ce îți imaginezi – pliante, bannere, cărți de vizită și multe altele!</p>
   </header>
 
@@ -273,7 +263,6 @@
   </footer>
 
   <script>
-    // Simulare trimitere formular
     const form = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
 
@@ -287,5 +276,3 @@
 
 </body>
 </html>
-
-
