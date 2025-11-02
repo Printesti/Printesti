@@ -66,8 +66,8 @@
     /* GALERIE */
     .gallery {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-wrap: wrap;           /* permite mai multe rânduri */
+      justify-content: center;
       gap: 50px;
       padding: 50px 20px;
     }
@@ -89,7 +89,8 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
-      width: fit-content;
+      width: 45%;               /* două pe rând pe desktop */
+      min-width: 300px;         /* să nu fie prea mic */
     }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
     .gallery-item:hover {
@@ -99,9 +100,8 @@
     }
     .gallery-item img {
       display: block;
-      width: 800px;       /* dimensiune pe desktop mai mică */
+      width: 100%;
       height: auto;
-      max-width: 100%;
       object-fit: cover;
       border-bottom: 2px solid #eee;
     }
@@ -150,14 +150,18 @@
     .social-links a:hover { color: #00b4d8; transform: scale(1.1); }
     footer p { font-size: 0.9em; color: #ccc; margin-top: 15px; }
 
+    /* MOBILE */
     @media (max-width: 900px) {
+      .gallery-item {
+        width: 100%;           /* o categorie pe rând pe mobil */
+      }
       .gallery-item img {
         width: 100%;
-        height: auto; /* pe mobil păstrează proporțiile */
+        height: auto;
       }
     }
 
-    /* ✅ BUTON WHATSAPP FLOTANT */
+    /* BUTON WHATSAPP FLOTANT */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
