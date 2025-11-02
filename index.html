@@ -264,4 +264,19 @@
     <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
   </footer>
 
-  <a href="https://wa.me/40728423466" class="whatsapp-float" title="Com
+  <a href="https://wa.me/40728423466" class="whatsapp-float" title="Comandă rapid pe WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const items = document.querySelectorAll('.gallery-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    items.forEach(item => observer.observe(item));
+  </script>
+
+</body>
+</html>
