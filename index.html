@@ -235,4 +235,44 @@
         <img src="meniuri.jpg" alt="Meniuri">
       </div>
       <p>Meniuri</p>
-    </
+    </div>
+  </section>
+
+  <section class="why">
+    <h3>De ce să alegi Printesti?</h3>
+    <p>✔️ Printăm rapid și profesional.<br>
+       ✔️ Livrăm oriunde în țară.<br>
+       ✔️ Comanzi ușor prin WhatsApp sau Email.<br>
+       ✔️ Calitate garantată pentru fiecare proiect.</p>
+  </section>
+</main>
+
+<footer>
+  <h3>Urmărește-ne</h3>
+  <p class="call">Comandă rapid prin:</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/share/1SvtnkSMT3/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/printesti.ro?igsh=eHd4Nm5lNzRiOXpl" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@printesti?_t=ZN-90xfTbgPSuU&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="mailto:office@printesti.ro"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/40728423466" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
+</footer>
+
+<a href="https://wa.me/40728423466" class="whatsapp-float" title="Comandă rapid pe WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  const items = document.querySelectorAll('.gallery-item');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  items.forEach(item => observer.observe(item));
+</script>
+
+</body>
+</html>
