@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="iconita.png">
   <link rel="shortcut icon" href="iconita.png" type="image/png">
 
-  <meta name="description" content="Printesti - Tu alegi, noi printăm! Invitații, stickere, cărți de vizită, tricouri, broșuri, flyere și meniuri personalizate.">
+  <meta name="description" content="Printesti - Tu alegi, noi printăm! Invitații, stickere, cărți de vizită, tricouri, broșuri, flyere și meniuri.">
   <meta name="keywords" content="print, print online, cărți de vizită, stickere, invitații nuntă, tricouri personalizate, print digital, broșuri, flyere, meniuri, print Ploiești">
   <meta name="author" content="Printesti.ro">
 
@@ -26,7 +26,11 @@
 
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
-    body {background: #f8f8f8; color: #333; overflow-x: hidden;}
+    body {
+      background: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
 
     /* HEADER */
     header {
@@ -95,11 +99,10 @@
     }
     .gallery-item img {
       display: block;
-      width: 1600px;      /* lățime maximă */
-      height: 1000px;     /* înălțime maximă */
-      max-width: 100%;    /* adaptabil pe mobil */
-      max-height: 100%;   /* păstrează proporțiile */
-      object-fit: cover;  /* crop inteligent dacă e necesar */
+      width: 800px;       /* dimensiune pe desktop mai mică */
+      height: auto;
+      max-width: 100%;
+      object-fit: cover;
       border-bottom: 2px solid #eee;
     }
     .gallery-item p {
