@@ -10,8 +10,10 @@
   <link rel="apple-touch-icon" href="iconita.png">
   <link rel="shortcut icon" href="iconita.png" type="image/png">
 
-  <!-- Meta pentru Google și Social Media -->
+  <!-- Meta SEO -->
   <meta name="description" content="Printesti - Tu alegi, noi printăm! Invitații, stickere, cărți de vizită, tricouri și tot ce ține de print.">
+  <meta name="keywords" content="print, print online, cărți de vizită, stickere, invitații nuntă, tricouri personalizate, print digital, bannere, print Ploiești">
+  <meta name="author" content="Printesti.ro">
   <meta property="og:title" content="Printesti - Tu alegi, noi printăm!">
   <meta property="og:description" content="Servicii de print profesionale: invitații, stickere, tricouri, cărți de vizită și multe altele.">
   <meta property="og:image" content="https://www.printesti.ro/iconita.png">
@@ -23,19 +25,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    body {background: #f8f8f8; color: #333; overflow-x: hidden;}
 
-    body {
-      background: #f8f8f8;
-      color: #333;
-      overflow-x: hidden;
-    }
-
+    /* HEADER */
     header {
       position: relative;
       text-align: center;
@@ -44,13 +37,7 @@
       color: white;
       overflow: hidden;
     }
-
-    header img {
-      max-width: 260px;
-      position: relative;
-      z-index: 1;
-    }
-
+    header img { max-width: 260px; position: relative; z-index: 1; }
     header h2 {
       margin-top: 15px;
       font-weight: 400;
@@ -58,7 +45,23 @@
       color: #ddd;
       letter-spacing: 1px;
     }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #00b4d8, #ff0099);
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
 
+    /* GALERIE */
     .gallery {
       display: flex;
       flex-direction: column;
@@ -67,7 +70,12 @@
       max-width: 1000px;
       margin: auto;
     }
-
+    h2.section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #222;
+    }
     .gallery-item {
       background: white;
       border-radius: 12px;
@@ -77,18 +85,14 @@
       opacity: 0;
       transform: translateY(50px);
     }
-
-    .gallery-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    .gallery-item.visible { opacity: 1; transform: translateY(0); }
     .gallery-item img {
       width: 100%;
       height: 300px;
       object-fit: cover;
+      transition: transform 0.4s ease;
     }
-
+    .gallery-item:hover img { transform: scale(1.05); }
     .gallery-item p {
       padding: 18px;
       text-align: center;
@@ -97,48 +101,73 @@
       background: #fafafa;
       transition: color 0.3s ease;
     }
+    .gallery-item:hover p { color: #00b4d8; }
 
-    .gallery-item:hover p {
-      color: #00b4d8;
+    /* SECȚIUNE AVANTAJE */
+    section.why {
+      text-align: center;
+      padding: 50px 20px;
+      background: white;
+      margin-top: 40px;
     }
+    section.why h3 { font-size: 1.4em; margin-bottom: 15px; color: #111; }
+    section.why p { color: #555; line-height: 1.7; font-size: 1em; }
 
+    /* FOOTER */
     footer {
       background: #111;
       color: white;
       text-align: center;
       padding: 40px 20px;
     }
-
-    footer h3 {
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
+    footer h3 { margin-bottom: 10px; font-weight: 500; }
+    footer p.call { margin-bottom: 15px; font-size: 1.1em; }
     .social-links {
       display: flex;
       justify-content: center;
       gap: 25px;
       margin-top: 15px;
     }
-
     .social-links a {
       color: white;
       font-size: 1.8em;
       transition: color 0.3s ease, transform 0.3s ease;
     }
-
-    .social-links a:hover {
-      color: #00b4d8;
-      transform: scale(1.1);
-    }
+    .social-links a:hover { color: #00b4d8; transform: scale(1.1); }
+    footer p { font-size: 0.9em; color: #ccc; margin-top: 15px; }
 
     @media (max-width: 600px) {
-      header img {
-        max-width: 200px;
-      }
-      header h2 {
-        font-size: 1.1em;
-      }
+      header img { max-width: 200px; }
+      header h2 { font-size: 1.1em; }
+    }
+
+    /* ✅ BUTON WHATSAPP FLOTANT – fără linie sub icon și glow la hover */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      line-height: 1;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none; /* elimină sublinierea linkului */
+    }
+    .whatsapp-float i {
+      display: block;
+      transform: translateY(1px);
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
     }
   </style>
 </head>
@@ -148,39 +177,46 @@
   <header>
     <img src="printestifinal.png" alt="Printesti Logo">
     <h2>Tu alegi, noi printăm!</h2>
+    <a href="https://wa.me/40728423466" class="cta-button">Comandă pe WhatsApp</a>
   </header>
 
   <main>
+    <h2 class="section-title">Descoperă serviciile noastre de print personalizat</h2>
     <section class="gallery">
       <div class="gallery-item">
         <img src="invitatii.jpg" alt="Invitații de nuntă">
         <p>Invitații de nuntă și evenimente</p>
       </div>
-
       <div class="gallery-item">
         <img src="carti-vizita.jpg" alt="Cărți de vizită">
         <p>Cărți de vizită personalizate</p>
       </div>
-
       <div class="gallery-item">
         <img src="stickere.jpg" alt="Stickere">
         <p>Stickere & autocolante</p>
       </div>
-
       <div class="gallery-item">
         <img src="tricouri.jpg" alt="Tricouri">
         <p>Tricouri personalizate</p>
       </div>
-
       <div class="gallery-item">
         <img src="bannere.jpg" alt="Bannere">
         <p>Bannere indoor & outdoor</p>
       </div>
     </section>
+
+    <section class="why">
+      <h3>De ce să alegi Printesti?</h3>
+      <p>✔️ Printăm rapid și profesional.<br>
+         ✔️ Livrăm oriunde în țară.<br>
+         ✔️ Comanzi ușor prin WhatsApp sau Email.<br>
+         ✔️ Calitate garantată pentru fiecare proiect.</p>
+    </section>
   </main>
 
   <footer>
     <h3>Urmărește-ne</h3>
+    <p class="call">Comandă rapid prin:</p>
     <div class="social-links">
       <a href="https://www.facebook.com/share/1SvtnkSMT3/" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/printesti.ro?igsh=eHd4Nm5lNzRiOXpl" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -188,11 +224,16 @@
       <a href="mailto:office@printesti.ro"><i class="fas fa-envelope"></i></a>
       <a href="https://wa.me/40728423466" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p style="margin-top: 15px; font-size: 0.9em;">&copy; 2025 Printesti. Toate drepturile rezervate. Locație: Ploiești</p>
+    <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
   </footer>
 
+  <!-- ✅ Buton WhatsApp flotant -->
+  <a href="https://wa.me/40728423466" class="whatsapp-float" title="Comandă rapid pe WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <script>
-    // Animație la derulare pentru apariția secțiunilor
+    // Animație apariție la derulare
     const items = document.querySelectorAll('.gallery-item');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -207,4 +248,3 @@
 
 </body>
 </html>
-
