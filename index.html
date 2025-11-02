@@ -5,24 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Printesti - Tu alegi, noi printăm!</title>
 
-  <!-- Favicon & Iconiță -->
   <link rel="icon" href="iconita.png" type="image/png">
   <link rel="apple-touch-icon" href="iconita.png">
   <link rel="shortcut icon" href="iconita.png" type="image/png">
 
-  <!-- Meta SEO -->
   <meta name="description" content="Printesti - Tu alegi, noi printăm! Invitații, stickere, cărți de vizită, tricouri, broșuri, flyere și meniuri personalizate.">
   <meta name="keywords" content="print, print online, cărți de vizită, stickere, invitații nuntă, tricouri personalizate, print digital, broșuri, flyere, meniuri, print Ploiești">
   <meta name="author" content="Printesti.ro">
+
   <meta property="og:title" content="Printesti - Tu alegi, noi printăm!">
   <meta property="og:description" content="Servicii de print profesionale: invitații, stickere, tricouri, cărți de vizită, broșuri, flyere și meniuri.">
   <meta property="og:image" content="printestifinal.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.printesti.ro/">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="printestifinal.png">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -64,10 +63,9 @@
     .gallery {
       display: flex;
       flex-direction: column;
-      gap: 40px;
-      padding: 40px 20px;
-      max-width: 1400px;
-      margin: auto;
+      align-items: center;
+      gap: 50px;
+      padding: 50px 20px;
     }
     h2.section-title {
       text-align: center;
@@ -76,32 +74,40 @@
       color: #222;
     }
     .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       background: white;
-      border-radius: 12px;
+      border: 2px solid #e0e0e0;       /* 🔹 Bordură subțire și elegantă */
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
-      text-align: center;
+      width: fit-content;
     }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      border-color: #00b4d8;
+    }
     .gallery-item img {
       display: block;
-      width: 40%;            /* 🔹 50% mai mic față de varianta anterioară */
-      max-width: 800px;      /* 🔹 limitează dimensiunea pe ecrane mari */
-      height: auto;          /* 🔹 păstrează proporția 1600x1000 */
-      margin: 0 auto;
-      border-radius: 10px;
-      transition: transform 0.4s ease;
+      width: 40%;             /* 🔹 50% mai mici decât originalul */
+      max-width: 800px;
+      height: auto;           /* 🔹 Păstrează proporțiile 1600x1000 */
+      border-bottom: 2px solid #eee;
     }
-    .gallery-item:hover img { transform: scale(1.03); }
     .gallery-item p {
+      width: 100%;
       padding: 18px;
       text-align: center;
       font-size: 1.1em;
       font-weight: 600;
       background: #fafafa;
+      color: #333;
       transition: color 0.3s ease;
     }
     .gallery-item:hover p { color: #00b4d8; }
@@ -139,10 +145,8 @@
     .social-links a:hover { color: #00b4d8; transform: scale(1.1); }
     footer p { font-size: 0.9em; color: #ccc; margin-top: 15px; }
 
-    @media (max-width: 600px) {
-      header img { max-width: 200px; }
-      header h2 { font-size: 1.1em; }
-      .gallery-item img { width: 90%; }
+    @media (max-width: 900px) {
+      .gallery-item img { width: 80%; }
     }
 
     /* ✅ BUTON WHATSAPP FLOTANT */
@@ -165,7 +169,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
     }
-    .whatsapp-float i { display: block; transform: translateY(1px); }
     .whatsapp-float:hover {
       transform: scale(1.1);
       box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
@@ -206,7 +209,7 @@
         <p>Broșuri & Flyere</p>
       </div>
       <div class="gallery-item">
-        <img src="meniuri.jpg" alt="Meniuri personalizate">
+        <img src="meniuri.jpg" alt="Meniuri">
         <p>Meniuri</p>
       </div>
     </section>
@@ -233,20 +236,17 @@
     <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
   </footer>
 
-  <!-- ✅ Buton WhatsApp flotant -->
   <a href="https://wa.me/40728423466" class="whatsapp-float" title="Comandă rapid pe WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
   <script>
-    // Animație apariție la derulare
     const items = document.querySelectorAll('.gallery-item');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
-
     items.forEach(item => observer.observe(item));
   </script>
 
