@@ -87,7 +87,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
-      width: 45%;         /* două pe rând pe desktop */
+      width: 45%;
       min-width: 300px;
     }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
@@ -97,19 +97,20 @@
       border-color: #00b4d8;
     }
 
-    /* Container pentru imagine */
+    /* Container pentru imagine cu centrare verticala */
     .gallery-item .img-container {
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;   /* centrăm vertical și orizontal */
+      padding: 20px 0;       /* spațiu sus și jos */
+      background: #fff;
     }
     .gallery-item img {
+      max-width: 100%;
+      max-height: 300px;     /* limitează înălțimea */
+      object-fit: contain;    /* păstrează proporțiile fără tăiere */
       display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-bottom: 2px solid #eee;
     }
 
     .gallery-item p {
@@ -160,7 +161,8 @@
     /* MOBILE */
     @media (max-width: 900px) {
       .gallery-item { width: 100%; }
-      .gallery-item img { width: 100%; height: auto; }
+      .gallery-item img { max-height: none; width: 100%; height: auto; }
+      .gallery-item .img-container { padding: 0; }
     }
 
     /* BUTON WHATSAPP FLOTANT */
@@ -262,19 +264,4 @@
     <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
   </footer>
 
-  <a href="https://wa.me/40728423466" class="whatsapp-float" title="Comandă rapid pe WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script>
-    const items = document.querySelectorAll('.gallery-item');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    items.forEach(item => observer.observe(item));
-  </script>
-
-</body>
-</html>
+  <a href="https://wa.me/40728423466" class="whatsapp-float" title="Com
