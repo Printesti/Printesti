@@ -78,7 +78,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: center;
       background: white;
       border: 2px solid #e0e0e0;
       border-radius: 16px;
@@ -97,19 +96,17 @@
       border-color: #00b4d8;
     }
 
-    /* Container pentru imagine cu centrare verticala */
+    /* Container pentru imagine cu centrare verticală */
     .gallery-item .img-container {
       width: 100%;
       display: flex;
       justify-content: center;
-      align-items: center;   /* centrăm vertical și orizontal */
-      padding: 20px 0;       /* spațiu sus și jos */
+      align-items: center; /* centrăm vertical */
       background: #fff;
     }
     .gallery-item img {
-      max-width: 100%;
-      max-height: 300px;     /* limitează înălțimea */
-      object-fit: contain;    /* păstrează proporțiile fără tăiere */
+      width: 100%;      /* ocupă toată lățimea */
+      height: auto;     /* păstrează proporțiile */
       display: block;
     }
 
@@ -161,8 +158,7 @@
     /* MOBILE */
     @media (max-width: 900px) {
       .gallery-item { width: 100%; }
-      .gallery-item img { max-height: none; width: 100%; height: auto; }
-      .gallery-item .img-container { padding: 0; }
+      .gallery-item img { width: 100%; height: auto; }
     }
 
     /* BUTON WHATSAPP FLOTANT */
@@ -194,89 +190,49 @@
 
 <body>
 
-  <header>
-    <img src="printestifinal.png" alt="Printesti Logo">
-    <h2>Tu alegi, noi printăm!</h2>
-    <a href="https://wa.me/40728423466" class="cta-button">Comandă pe WhatsApp</a>
-  </header>
+<header>
+  <img src="printestifinal.png" alt="Printesti Logo">
+  <h2>Tu alegi, noi printăm!</h2>
+  <a href="https://wa.me/40728423466" class="cta-button">Comandă pe WhatsApp</a>
+</header>
 
-  <main>
-    <h2 class="section-title">Descoperă serviciile noastre de print personalizat</h2>
+<main>
+  <h2 class="section-title">Descoperă serviciile noastre de print personalizat</h2>
 
-    <section class="gallery">
-      <div class="gallery-item">
-        <div class="img-container">
-          <img src="invitatii.jpg" alt="Invitații nuntă, mărturii și plicuri">
-        </div>
-        <p>Invitații nuntă, mărturii & plicuri</p>
+  <section class="gallery">
+    <div class="gallery-item">
+      <div class="img-container">
+        <img src="invitatii.jpg" alt="Invitații nuntă, mărturii și plicuri">
       </div>
-      <div class="gallery-item">
-        <div class="img-container">
-          <img src="carti-vizita.jpg" alt="Cărți de vizită">
-        </div>
-        <p>Cărți de vizită personalizate</p>
-      </div>
-      <div class="gallery-item">
-        <div class="img-container">
-          <img src="stickere.jpg" alt="Stickere">
-        </div>
-        <p>Stickere & autocolante</p>
-      </div>
-      <div class="gallery-item">
-        <div class="img-container">
-          <img src="tricouri.jpg" alt="Tricouri">
-        </div>
-        <p>Tricouri personalizate</p>
-      </div>
-      <div class="gallery-item">
-        <div class="img-container">
-          <img src="brosuri.jpg" alt="Broșuri și flyere">
-        </div>
-        <p>Broșuri & Flyere</p>
-      </div>
-      <div class="gallery-item">
-        <div class="img-container">
-          <img src="meniuri.jpg" alt="Meniuri">
-        </div>
-        <p>Meniuri</p>
-      </div>
-    </section>
-
-    <section class="why">
-      <h3>De ce să alegi Printesti?</h3>
-      <p>✔️ Printăm rapid și profesional.<br>
-         ✔️ Livrăm oriunde în țară.<br>
-         ✔️ Comanzi ușor prin WhatsApp sau Email.<br>
-         ✔️ Calitate garantată pentru fiecare proiect.</p>
-    </section>
-  </main>
-
-  <footer>
-    <h3>Urmărește-ne</h3>
-    <p class="call">Comandă rapid prin:</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/share/1SvtnkSMT3/" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/printesti.ro?igsh=eHd4Nm5lNzRiOXpl" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@printesti?_t=ZN-90xfTbgPSuU&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="mailto:office@printesti.ro"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/40728423466" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <p>Invitații nuntă, mărturii & plicuri</p>
     </div>
-    <p>&copy; 2025 Printesti. Toate drepturile rezervate.</p>
-  </footer>
-
-  <a href="https://wa.me/40728423466" class="whatsapp-float" title="Comandă rapid pe WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script>
-    const items = document.querySelectorAll('.gallery-item');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    items.forEach(item => observer.observe(item));
-  </script>
-
-</body>
-</html>
+    <div class="gallery-item">
+      <div class="img-container">
+        <img src="carti-vizita.jpg" alt="Cărți de vizită">
+      </div>
+      <p>Cărți de vizită personalizate</p>
+    </div>
+    <div class="gallery-item">
+      <div class="img-container">
+        <img src="stickere.jpg" alt="Stickere">
+      </div>
+      <p>Stickere & autocolante</p>
+    </div>
+    <div class="gallery-item">
+      <div class="img-container">
+        <img src="tricouri.jpg" alt="Tricouri">
+      </div>
+      <p>Tricouri personalizate</p>
+    </div>
+    <div class="gallery-item">
+      <div class="img-container">
+        <img src="brosuri.jpg" alt="Broșuri și flyere">
+      </div>
+      <p>Broșuri & Flyere</p>
+    </div>
+    <div class="gallery-item">
+      <div class="img-container">
+        <img src="meniuri.jpg" alt="Meniuri">
+      </div>
+      <p>Meniuri</p>
+    </
