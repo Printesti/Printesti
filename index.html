@@ -66,7 +66,7 @@
     /* GALERIE */
     .gallery {
       display: flex;
-      flex-wrap: wrap;           /* permite mai multe rânduri */
+      flex-wrap: wrap;
       justify-content: center;
       gap: 50px;
       padding: 50px 20px;
@@ -80,6 +80,7 @@
     .gallery-item {
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
       background: white;
       border: 2px solid #e0e0e0;
@@ -89,8 +90,9 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
-      width: 45%;               /* două pe rând pe desktop */
-      min-width: 300px;         /* să nu fie prea mic */
+      width: 45%;
+      min-width: 300px;
+      height: 500px;  /* toate au aceeași înălțime */
     }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
     .gallery-item:hover {
@@ -102,6 +104,7 @@
       display: block;
       width: 100%;
       height: auto;
+      max-height: 400px; /* limităm înălțimea imaginii */
       object-fit: cover;
       border-bottom: 2px solid #eee;
     }
@@ -114,6 +117,7 @@
       background: #fafafa;
       color: #333;
       transition: color 0.3s ease;
+      margin-top: auto; /* împinge textul la finalul containerului */
     }
     .gallery-item:hover p { color: #00b4d8; }
 
@@ -153,11 +157,15 @@
     /* MOBILE */
     @media (max-width: 900px) {
       .gallery-item {
-        width: 100%;           /* o categorie pe rând pe mobil */
+        width: 100%;
+        height: auto; /* pe mobil se ajustează automat */
       }
       .gallery-item img {
         width: 100%;
         height: auto;
+      }
+      .gallery-item p {
+        margin-top: 0;
       }
     }
 
