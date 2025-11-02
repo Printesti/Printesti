@@ -26,11 +26,7 @@
 
   <style>
     * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
-    body {
-      background: #ffffff;
-      color: #333;
-      overflow-x: hidden;
-    }
+    body { background: #ffffff; color: #333; overflow-x: hidden; }
 
     /* HEADER */
     header {
@@ -77,10 +73,11 @@
       font-weight: 600;
       color: #222;
     }
+
     .gallery-item {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       background: white;
       border: 2px solid #e0e0e0;
@@ -90,9 +87,8 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       opacity: 0;
       transform: translateY(50px);
-      width: 45%;
+      width: 45%;         /* două pe rând pe desktop */
       min-width: 300px;
-      height: 500px;  /* toate au aceeași înălțime */
     }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
     .gallery-item:hover {
@@ -100,14 +96,22 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.15);
       border-color: #00b4d8;
     }
+
+    /* Container pentru imagine */
+    .gallery-item .img-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
     .gallery-item img {
       display: block;
       width: 100%;
       height: auto;
-      max-height: 400px; /* limităm înălțimea imaginii */
-      object-fit: cover;
+      object-fit: contain;
       border-bottom: 2px solid #eee;
     }
+
     .gallery-item p {
       width: 100%;
       padding: 18px;
@@ -117,7 +121,6 @@
       background: #fafafa;
       color: #333;
       transition: color 0.3s ease;
-      margin-top: auto; /* împinge textul la finalul containerului */
     }
     .gallery-item:hover p { color: #00b4d8; }
 
@@ -156,17 +159,8 @@
 
     /* MOBILE */
     @media (max-width: 900px) {
-      .gallery-item {
-        width: 100%;
-        height: auto; /* pe mobil se ajustează automat */
-      }
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-      }
-      .gallery-item p {
-        margin-top: 0;
-      }
+      .gallery-item { width: 100%; }
+      .gallery-item img { width: 100%; height: auto; }
     }
 
     /* BUTON WHATSAPP FLOTANT */
@@ -209,27 +203,39 @@
 
     <section class="gallery">
       <div class="gallery-item">
-        <img src="invitatii.jpg" alt="Invitații nuntă, mărturii și plicuri">
+        <div class="img-container">
+          <img src="invitatii.jpg" alt="Invitații nuntă, mărturii și plicuri">
+        </div>
         <p>Invitații nuntă, mărturii & plicuri</p>
       </div>
       <div class="gallery-item">
-        <img src="carti-vizita.jpg" alt="Cărți de vizită">
+        <div class="img-container">
+          <img src="carti-vizita.jpg" alt="Cărți de vizită">
+        </div>
         <p>Cărți de vizită personalizate</p>
       </div>
       <div class="gallery-item">
-        <img src="stickere.jpg" alt="Stickere">
+        <div class="img-container">
+          <img src="stickere.jpg" alt="Stickere">
+        </div>
         <p>Stickere & autocolante</p>
       </div>
       <div class="gallery-item">
-        <img src="tricouri.jpg" alt="Tricouri">
+        <div class="img-container">
+          <img src="tricouri.jpg" alt="Tricouri">
+        </div>
         <p>Tricouri personalizate</p>
       </div>
       <div class="gallery-item">
-        <img src="brosuri.jpg" alt="Broșuri și flyere">
+        <div class="img-container">
+          <img src="brosuri.jpg" alt="Broșuri și flyere">
+        </div>
         <p>Broșuri & Flyere</p>
       </div>
       <div class="gallery-item">
-        <img src="meniuri.jpg" alt="Meniuri">
+        <div class="img-container">
+          <img src="meniuri.jpg" alt="Meniuri">
+        </div>
         <p>Meniuri</p>
       </div>
     </section>
