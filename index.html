@@ -64,9 +64,9 @@
     .gallery {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 40px;
       padding: 40px 20px;
-      max-width: 1400px; /* 🔹 redimensionare generală */
+      max-width: 1400px;
       margin: auto;
     }
     h2.section-title {
@@ -83,13 +83,14 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       opacity: 0;
       transform: translateY(50px);
+      text-align: center;
     }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
     .gallery-item img {
       display: block;
-      width: 80%;            /* 🔹 imaginea ocupă 80% din container */
-      max-width: 1600px;     /* 🔹 dimensiune maximă reală */
-      height: auto;          /* 🔹 păstrează proporția 1600x1000 fără tăiere */
+      width: 40%;            /* 🔹 50% mai mic față de varianta anterioară */
+      max-width: 800px;      /* 🔹 limitează dimensiunea pe ecrane mari */
+      height: auto;          /* 🔹 păstrează proporția 1600x1000 */
       margin: 0 auto;
       border-radius: 10px;
       transition: transform 0.4s ease;
@@ -141,7 +142,7 @@
     @media (max-width: 600px) {
       header img { max-width: 200px; }
       header h2 { font-size: 1.1em; }
-      .gallery-item img { width: 100%; }
+      .gallery-item img { width: 90%; }
     }
 
     /* ✅ BUTON WHATSAPP FLOTANT */
